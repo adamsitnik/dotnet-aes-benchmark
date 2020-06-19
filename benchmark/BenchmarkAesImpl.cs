@@ -19,8 +19,8 @@
     //[SimpleJob(RunStrategy.ColdStart, RuntimeMoniker.NetCoreApp50, launchCount: 5)]
 
     // Actual config which is used for measuring
-    [SimpleJob(RuntimeMoniker.NetCoreApp31, baseline: true)]
-    [SimpleJob(RuntimeMoniker.NetCoreApp50)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp31)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp50, baseline: true)]
     public class BenchmarkAesImpl
     {
         static readonly byte[] EmptyByteArray = new byte[0];
@@ -99,7 +99,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         public byte[] AesDecryptDotNet128Type2()
         {
             iv.CopyTo(ivCopy, 0);
