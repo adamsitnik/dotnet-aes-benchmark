@@ -100,6 +100,19 @@
         }
 
         [Benchmark]
+        public byte[] AesDecryptDotNet128Type2()
+        {
+            iv.CopyTo(ivCopy, 0);
+            var res = AesDotNetImpl2.DecryptAes(encrypted128, key128, ivCopy, out var decrypted);
+            if (res != 0)
+            {
+                throw new InvalidOperationException("AesDecryptOpenSsl128 failed");
+            }
+
+            return decrypted;
+        }
+
+        [Benchmark]
         public byte[] AesDecryptBCryptWin128()
         {
             if (!isWindows)
