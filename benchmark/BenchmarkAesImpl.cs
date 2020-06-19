@@ -73,7 +73,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptDotNet192()
         {
             iv.CopyTo(ivCopy, 0);
@@ -86,7 +86,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptDotNet256()
         {
             iv.CopyTo(ivCopy, 0);
@@ -130,7 +130,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptBCryptWin192()
         {
             if (!isWindows)
@@ -148,7 +148,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptBCryptWin256()
         {
             if (!isWindows)
@@ -179,7 +179,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptOpenSsl192()
         {
             iv.CopyTo(ivCopy, 0);
@@ -192,7 +192,7 @@
             return decrypted;
         }
 
-        [Benchmark]
+        //[Benchmark]
         public byte[] AesDecryptOpenSsl256()
         {
             iv.CopyTo(ivCopy, 0);
