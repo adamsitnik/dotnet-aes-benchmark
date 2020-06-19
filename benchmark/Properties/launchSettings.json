@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "benchmark": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
