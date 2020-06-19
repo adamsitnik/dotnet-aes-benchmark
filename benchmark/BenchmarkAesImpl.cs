@@ -108,7 +108,7 @@
             }
 
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesWinBcryptDecryption.DecryptAes(encrypted128, key128, ivCopy, out var decrypted);
+            var res = AesWinBcryptDecryption.DecryptAes(encrypted128, key128, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptBCryptWin128 failed");
@@ -126,7 +126,7 @@
             }
 
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesWinBcryptDecryption.DecryptAes(encrypted192, key192, ivCopy, out var decrypted);
+            var res = AesWinBcryptDecryption.DecryptAes(encrypted192, key192, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptBCryptWin192 failed");
@@ -144,7 +144,7 @@
             }
 
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesWinBcryptDecryption.DecryptAes(encrypted256, key256, ivCopy, out var decrypted);
+            var res = AesWinBcryptDecryption.DecryptAes(encrypted256, key256, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptBCryptWin256 failed");
@@ -157,7 +157,7 @@
         public byte[] AesDecryptOpenSsl128()
         {
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesOpenSslDecryption.DecryptAes(encrypted128, key128, ivCopy, out var decrypted);
+            var res = AesOpenSslDecryption.DecryptAes(encrypted128, key128, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptOpenSsl128 failed");
@@ -170,7 +170,7 @@
         public byte[] AesDecryptOpenSsl192()
         {
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesOpenSslDecryption.DecryptAes(encrypted192, key192, ivCopy, out var decrypted);
+            var res = AesOpenSslDecryption.DecryptAes(encrypted192, key192, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptOpenSsl192 failed");
@@ -183,7 +183,7 @@
         public byte[] AesDecryptOpenSsl256()
         {
             iv.CopyTo(ivCopy, 0);
-            var res = benchmark.AesOpenSslDecryption.DecryptAes(encrypted256, key256, ivCopy, out var decrypted);
+            var res = AesOpenSslDecryption.DecryptAes(encrypted256, key256, ivCopy, out var decrypted);
             if (res != 0)
             {
                 throw new InvalidOperationException("AesDecryptOpenSsl256 failed");
