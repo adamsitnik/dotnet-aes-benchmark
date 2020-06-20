@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bcrypt2", "bcrypt2\bcrypt2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "benchmark", "benchmark\benchmark.csproj", "{58CDC95E-C35E-4C96-839B-83D6E2066A45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "benchmark_simple", "benchmark_simple\benchmark_simple.csproj", "{1E445924-411C-4AC0-A264-6D2B160B3FF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{58CDC95E-C35E-4C96-839B-83D6E2066A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58CDC95E-C35E-4C96-839B-83D6E2066A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58CDC95E-C35E-4C96-839B-83D6E2066A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E445924-411C-4AC0-A264-6D2B160B3FF1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{1E445924-411C-4AC0-A264-6D2B160B3FF1}.Debug|Any CPU.Build.0 = Debug|x64
+		{1E445924-411C-4AC0-A264-6D2B160B3FF1}.Release|Any CPU.ActiveCfg = Release|x64
+		{1E445924-411C-4AC0-A264-6D2B160B3FF1}.Release|Any CPU.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
