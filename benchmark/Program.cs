@@ -1,4 +1,6 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Running;
 
 namespace benchmark
 {
@@ -6,7 +8,9 @@ namespace benchmark
     {
         static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<BenchmarkAesImpl>();
+            var config = DefaultConfig.Instance.AddJob(Job.Default.WithPlatform(BenchmarkDotNet.Environments.Platform.X64).AsDefault());
+
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, config);
         }
     }
 }
