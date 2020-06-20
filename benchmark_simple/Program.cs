@@ -61,15 +61,6 @@
 
             Console.WriteLine("Measure");
 
-            // measure DecryptAesBCrypt
-            startTicks = DateTime.UtcNow.Ticks;
-            for (var i = 0; i < repeats; ++i)
-            {
-                DecryptAesBCrypt(encrypted128, key128, iv);
-            }
-            var μsAesBCrypt = ((DateTime.UtcNow.Ticks - startTicks) / 10.0) / repeats;
-            Console.WriteLine($"DecryptAesBCrypt: {μsAesBCrypt:.00} μs, ratio=100%");
-
             // measure DecryptAesDotNetTransform
             startTicks = DateTime.UtcNow.Ticks;
             for (var i = 0; i < repeats; ++i)
@@ -77,7 +68,16 @@
                 DecryptAesDotNetTransform(encrypted128, key128, iv);
             }
             var μsAesDotNetTransform = ((DateTime.UtcNow.Ticks - startTicks) / 10.0) / repeats;
-            Console.WriteLine($"DecryptAesDotNetTransform: {μsAesDotNetTransform:.00} μs, ratio={100 * μsAesDotNetTransform / μsAesBCrypt:.}%");
+            Console.WriteLine($"DecryptAesDotNetTransform: {μsAesDotNetTransform:.00} μs, ratio=100%");
+
+            // measure DecryptAesBCrypt
+            startTicks = DateTime.UtcNow.Ticks;
+            for (var i = 0; i < repeats; ++i)
+            {
+                DecryptAesBCrypt(encrypted128, key128, iv);
+            }
+            var μsAesBCrypt = ((DateTime.UtcNow.Ticks - startTicks) / 10.0) / repeats;
+            Console.WriteLine($"DecryptAesBCrypt: {μsAesBCrypt:.00} μs, ratio={100 * μsAesBCrypt / μsAesDotNetTransform:.}%");
 
             // measure DecryptAesDotNetStream
             startTicks = DateTime.UtcNow.Ticks;
@@ -86,7 +86,7 @@
                 DecryptAesDotNetStream(encrypted128, key128, iv);
             }
             var μsAesDotNetStream = ((DateTime.UtcNow.Ticks - startTicks) / 10.0) / repeats;
-            Console.WriteLine($"DecryptAesDotNetStream: {μsAesDotNetStream:.00} μs, ratio={100 * μsAesDotNetStream/ μsAesBCrypt:.}%");
+            Console.WriteLine($"DecryptAesDotNetStream: {μsAesDotNetStream:.00} μs, ratio={100 * μsAesDotNetStream/ μsAesDotNetTransform:.}%");
         }
 
         public static byte[] DecryptAesDotNetTransform(byte[] encrypted, byte[] key, byte[] iv)
