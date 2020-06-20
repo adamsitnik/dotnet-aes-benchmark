@@ -1,1 +1,1 @@
-﻿dotnet benchmark.dll
+dotnet benchmark.dll
