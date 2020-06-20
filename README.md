@@ -5,11 +5,10 @@ Benchmark of AES decryption
 ## Windows Host benchmark_simple
 ```
 dotnet benchmark_simple.dll
-Warm up
-Measure
-DecryptAesBCrypt: 4.48 µs, ratio=100%
-DecryptAesDotNetTransform: 5.74 µs, ratio=128%
-DecryptAesDotNetStream: 9.32 µs, ratio=208%
+...
+DecryptAesDotNetTransform: 5.76 µs, ratio=100%
+DecryptAesBCrypt: 4.35 µs, ratio=76%
+DecryptAesDotNetStream: 9.32 µs, ratio=162%
 ```
 
 ## Windows Host
